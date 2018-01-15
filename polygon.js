@@ -6,7 +6,7 @@ module.exports = {
     if(sideLength <= 0){
       sideLength = 1;
     }
-    let vector = {x: length, y: 0.0};
+    let vector = {x: sideLength, y: 0.0};
     vector = rotate(vector, 180-startingAngle);
     let vertices = [];
     let totalAngle = (sides-2)*180;
