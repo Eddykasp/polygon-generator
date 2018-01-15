@@ -20,6 +20,7 @@ module.exports = {
       vector.x = Math.round(vector.x * 1000)/1000;
       vector.y = Math.round(vector.y * 1000)/1000;
     }
+    // move all vertices into first quadrant
     let minx = 0;
     for(let v of vertices){
       if (minx > v.x){
@@ -29,6 +30,17 @@ module.exports = {
     let xshift = -1*minx;
     for(let v of vertices){
       v.x = v.x + xshift;
+    }
+
+    let miny = 0;
+    for(let v of vertices){
+      if (miny > v.y){
+        minx = v.y;
+      }
+    }
+    let yshift = -1*miny;
+    for(let v of vertices){
+      v.y = v.y + yshift;
     }
     return vertices;
   }
