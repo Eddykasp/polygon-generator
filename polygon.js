@@ -7,11 +7,11 @@ module.exports = {
       sideLength = 1;
     }
     let vector = {x: length, y: 0.0};
+    vector = rotate(vector, 180-startingAngle);
     let vertices = [];
     let totalAngle = (sides-2)*180;
     let innerAngle = totalAngle/sides;
     vertices.push({x: 0.0, y: 0.0});
-    //console.log(vertices);
     for(let i=0;i<sides-1;i++){
       // add next vector
       vertices.push({x: vertices[i].x+vector.x, y: vertices[i].y+vector.y});
