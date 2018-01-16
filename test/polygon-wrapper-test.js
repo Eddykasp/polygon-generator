@@ -16,12 +16,22 @@ test('transform', function(t){
   t.equal(Math.round(1000*poly.vertices[2].y)/1000, 1.866);
 });
 
-test('rotation', function(t){
+test('rotation around centre', function(t){
   t.plan(1);
   t.fail('Not implemented');
 });
 
-test('scaling', function(t){
+test('rotation around given point', function(t){
+  t.plan(1);
+  t.fail('Not implemented');
+});
+
+test('scaling from centre', function(t){
+  t.plan(1);
+  t.fail('Not implemented');
+});
+
+test('scaling from given point', function(t){
   t.plan(1);
   t.fail('Not implemented');
 });
