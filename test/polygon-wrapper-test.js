@@ -37,8 +37,11 @@ test('scaling from given point', function(t){
 });
 
 test('centroid triangle', function(t){
-  t.plan(1);
-  t.fail('Not implemented');
+  t.plan(2);
+  let poly = polygon.polygon(polygon.coordinates(3));
+  let centroid = poly.centroid();
+  t.equal(Math.round(1000*centroid.x)/1000, 0.5);
+  t.equal(Math.round(1000*centroid.y)/1000, 0.289);
 });
 
 test('area triangle', function(t){
