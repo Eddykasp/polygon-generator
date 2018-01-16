@@ -7,7 +7,7 @@ module.exports = {
       sideLength = 1;
     }
     let vector = {x: sideLength, y: 0.0};
-    vector = rotate(vector, 180-startingAngle);
+    vector = rotate(vector, startingAngle);
     let vertices = [];
     let totalAngle = (sides-2)*180;
     let innerAngle = totalAngle/sides;
@@ -16,7 +16,7 @@ module.exports = {
       // add next vector
       vertices.push({x: vertices[i].x+vector.x, y: vertices[i].y+vector.y});
       // rotate for next iteration
-      vector = rotate(vector, innerAngle);
+      vector = rotate(vector, 180-innerAngle);
     }
     // move all vertices into first quadrant
     let minx = 0;
@@ -48,8 +48,25 @@ module.exports = {
         vertix.y += vector.y;
       });
     };
-    this.rotate = function(point, angle){};
-    this.scale = function(point, factor){};
+    this.rotate = function(angle, point){
+      if(point == 'undefined'){
+        point = this.centroid();
+      }
+      for(let i = 0; i < this.vertices.length; i++){
+        let deltaVector = {
+          x: this.vertices[i].x - point.x,
+          y: this.vertices[i].y - point.y
+        };
+        deltaVector = rotate(deltaVector, angle);
+        this.vertices[i].x = point.x + deltaVector.x;
+        this.vertices[i].y = point.y + deltaVector.y;
+      }
+    };
+    this.scale = function(factor, point){
+      if(point == 'undefined'){
+        point = this.centroid();
+      }
+    };
     this.centroid = function(){
       let sumx = 0;
       let sumy = 0;
@@ -86,7 +103,7 @@ function toRadians(angle) {
 }
 
 function rotate(vector, angle) {
-  let newX = vector.x*Math.cos(toRadians(180-angle)) - vector.y*Math.sin(toRadians(180-angle));
-  let newY = vector.x*Math.sin(toRadians(180-angle)) + vector.y*Math.cos(toRadians(180-angle));
+  let newX = vector.x*Math.cos(toRadians(angle)) - vector.y*Math.sin(toRadians(angle));
+  let newY = vector.x*Math.sin(toRadians(angle)) + vector.y*Math.cos(toRadians(angle));
   return {x: newX, y: newY};
 }
