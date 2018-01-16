@@ -17,8 +17,6 @@ module.exports = {
       vertices.push({x: vertices[i].x+vector.x, y: vertices[i].y+vector.y});
       // rotate for next iteration
       vector = rotate(vector, innerAngle);
-      vector.x = Math.round(vector.x * 1000)/1000;
-      vector.y = Math.round(vector.y * 1000)/1000;
     }
     // move all vertices into first quadrant
     let minx = 0;
@@ -28,20 +26,18 @@ module.exports = {
       }
     }
     let xshift = -1*minx;
-    for(let v of vertices){
-      v.x = v.x + xshift;
-    }
-
     let miny = 0;
     for(let v of vertices){
       if (miny > v.y){
-        minx = v.y;
+        miny = v.y;
       }
     }
     let yshift = -1*miny;
-    for(let v of vertices){
-      v.y = v.y + yshift;
+    for(let i = 0; i < vertices.length; i++){
+      vertices[i].x = vertices[i].x + xshift;
+      vertices[i].y = vertices[i].y + yshift;
     }
+
     return vertices;
   }
 };
