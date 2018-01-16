@@ -37,12 +37,24 @@ Transform shifts a polygon along a vector. The vector needs to be an object with
 
 ### rotate
 ```
-poly.rotate(point, angle);
+poly.rotate(angle, point);
 ```
-Rotate a polygon anti-clockwise around a given point `{x: ?, y: ?}` by the specified angle. If no point is specified then the geometric centre of the polygon will be used.
+Rotate a polygon anti-clockwise around a given point `{x: ?, y: ?}` by the specified angle. If no point is specified then the centroid of the polygon will be used.
 
 ### scale
 ```
-poly.rotate(point, factor);
+poly.rotate(factor, point);
 ```
-Scale a polygon by a certain factor with regard to a given point. If no point is specified then the geometric centre of the polygon will be used.
+Scale a polygon by a certain factor with regard to a given point. If no point is specified then the centroid of the polygon will be used.
+
+### area
+```
+poly.area();
+```
+Returns the area of the polygon.
+
+### centroid
+```
+poly.centroid();
+```
+Returns the coordinates of the centroid `{x: Cx, y: Cy}`.
