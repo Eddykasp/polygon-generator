@@ -39,6 +39,13 @@ module.exports = {
     }
 
     return vertices;
+  },
+  polygon: function(vertices){
+    this.vertices = vertices;
+    this.transform = function(vector){};
+    this.rotate = function(point, angle){};
+    this.scale = function(point, factor){};
+    return this;
   }
 };
 
