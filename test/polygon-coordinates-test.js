@@ -29,3 +29,7 @@ test('downward rotated triangle', function(t){
   t.equal(Math.round(1000*coords[2].x)/1000, 1);
   t.equal(Math.round(1000*coords[2].y)/1000, 0.866);
 });
+
+test('rotated pentagon', function(t){
+  t.end(new Error('Test not yet implemented'));
+});
