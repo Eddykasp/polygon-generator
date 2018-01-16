@@ -31,5 +31,6 @@ test('downward rotated triangle', function(t){
 });
 
 test('rotated pentagon', function(t){
-  t.end(new Error('Test not yet implemented'));
+  t.plan(1);
+  t.fail('Not implemented');
 });

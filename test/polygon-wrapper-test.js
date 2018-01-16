@@ -17,9 +17,11 @@ test('transform', function(t){
 });
 
 test('rotation', function(t){
-  t.end(new Error('Test not yet implemented'));
+  t.plan(1);
+  t.fail('Not implemented');
 });
 
 test('scaling', function(t){
-  t.end(new Error('Test not yet implemented'));
+  t.plan(1);
+  t.fail('Not implemented');
 });
