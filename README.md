@@ -19,3 +19,30 @@ sideLength = 1;
 startingAngle = 10;
 vertices = polygon.coordinates(sides, sideLength, startingAngle);
 ```
+
+## polygon wrapper
+The polygon object provides transform, rotation and scaling methods for polygons. To create one simply pass in an array of vectors representing the vertices.
+```
+poly = polygon.polygon([{x: 0, y: 0}, {x: 1, y: 0}, {x: 0.5, y: 0.866}]);
+```
+You can also directly pass in the results of the coordinates method.
+```
+poly = polygon.polygon(polygon.coordinates(5,2,20));
+```
+### transform
+```
+poly.transform(vector);
+```
+Transform shifts a polygon along a vector. The vector needs to be an object with a field `x` and `y`, which should both be numbers.
+
+### rotate
+```
+poly.rotate(point, angle);
+```
+Rotate a polygon anti-clockwise around a given point `{x: ?, y: ?}` by the specified angle. If no point is specified then the geometric centre of the polygon will be used.
+
+### scale
+```
+poly.rotate(point, factor);
+```
+Scale a polygon by a certain factor with regard to a given point. If no point is specified then the geometric centre of the polygon will be used.
