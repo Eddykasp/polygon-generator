@@ -42,7 +42,12 @@ module.exports = {
   },
   polygon: function(vertices){
     this.vertices = vertices;
-    this.transform = function(vector){};
+    this.transform = function(vector){
+      this.vertices.forEach(function(vertix){
+        vertix.x += vector.x;
+        vertix.y += vector.y;
+      });
+    };
     this.rotate = function(point, angle){};
     this.scale = function(point, factor){};
     return this;
