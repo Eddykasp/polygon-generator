@@ -50,6 +50,18 @@ module.exports = {
     };
     this.rotate = function(point, angle){};
     this.scale = function(point, factor){};
+    this.centroid = function(){
+
+    };
+    this.area = function(){
+      let sum = 0;
+      for(let i = 0; i < this.vertices.length-1; i++){
+        sum += this.vertices[i].x * this.vertices[i+1].y - this.vertices[i+1].x * this.vertices[i].y;
+      }
+      let last = this.vertices.length-1;
+      sum += this.vertices[last].x * this.vertices[0].y - this.vertices[0].x * this.vertices[last].y;
+      return 0.5*sum;
+    };
     return this;
   }
 };

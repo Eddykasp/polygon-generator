@@ -35,3 +35,15 @@ test('scaling from given point', function(t){
   t.plan(1);
   t.fail('Not implemented');
 });
+
+test('centroid triangle', function(t){
+  t.plan(1);
+  t.fail('Not implemented');
+});
+
+test('area triangle', function(t){
+  t.plan(1);
+  let poly = polygon.polygon(polygon.coordinates(3));
+  let area = poly.area();
+  t.equal(Math.round(1000*area)/1000, 0.433);
+});
