@@ -47,8 +47,18 @@ test('rotation around given point', function(t){
 });
 
 test('scaling from centre', function(t){
-  t.plan(1);
-  t.fail('Not implemented');
+  t.plan(6);
+  let poly = polygon.polygon(polygon.coordinates(3));
+  poly.scale(2);
+
+  t.equal(Math.round(1000*poly.vertices[0].x)/1000, -0.5);
+  t.equal(Math.round(1000*poly.vertices[0].y)/1000, -0.289);
+
+  t.equal(Math.round(1000*poly.vertices[1].x)/1000, 1.5);
+  t.equal(Math.round(1000*poly.vertices[1].y)/1000, -0.289);
+
+  t.equal(Math.round(1000*poly.vertices[2].x)/1000, 0.5);
+  t.equal(Math.round(1000*poly.vertices[2].y)/1000, 1.443);
 });
 
 test('scaling from given point', function(t){

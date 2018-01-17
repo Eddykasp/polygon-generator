@@ -72,7 +72,7 @@ module.exports = {
           y: this.vertices[i].y - point.y
         };
         this.vertices[i].x = point.x + factor*scaleVector.x;
-        this.vertices[i].y = point.x + factor*scaleVector.y;
+        this.vertices[i].y = point.y + factor*scaleVector.y;
       }
     };
     this.centroid = function(){
