@@ -31,6 +31,22 @@ test('downward rotated triangle', function(t){
 });
 
 test('rotated pentagon', function(t){
-  t.plan(1);
-  t.fail('Not implemented');
+  t.plan(10);
+
+  let coords = polygon.coordinates(5, 1, 36);
+
+  t.equal(Math.round(1000*coords[0].x)/1000, 0.809);
+  t.equal(Math.round(1000*coords[0].y)/1000, 0);
+
+  t.equal(Math.round(1000*coords[1].x)/1000, 1.618);
+  t.equal(Math.round(1000*coords[1].y)/1000, 0.588);
+
+  t.equal(Math.round(1000*coords[2].x)/1000, 1.309);
+  t.equal(Math.round(1000*coords[2].y)/1000, 1.539);
+
+  t.equal(Math.round(1000*coords[3].x)/1000, 0.309);
+  t.equal(Math.round(1000*coords[3].y)/1000, 1.539);
+
+  t.equal(Math.round(1000*coords[4].x)/1000, 0);
+  t.equal(Math.round(1000*coords[4].y)/1000, 0.588);
 });
