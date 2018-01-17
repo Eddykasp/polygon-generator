@@ -63,8 +63,16 @@ module.exports = {
       }
     };
     this.scale = function(factor, point){
-      if(point == 'undefined'){
+      if(typeof point == 'undefined'){
         point = this.centroid();
+      }
+      for(let i = 0; i < this.vertices.length; i++){
+        let scaleVector = {
+          x: this.vertices[i].x - point.x,
+          y: this.vertices[i].y - point.y
+        };
+        this.vertices[i].x = point.x + factor*scaleVector.x;
+        this.vertices[i].y = point.x + factor*scaleVector.y;
       }
     };
     this.centroid = function(){

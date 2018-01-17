@@ -52,8 +52,18 @@ test('scaling from centre', function(t){
 });
 
 test('scaling from given point', function(t){
-  t.plan(1);
-  t.fail('Not implemented');
+  t.plan(6);
+  let poly = polygon.polygon(polygon.coordinates(3));
+  poly.scale(2, {x: 0, y: 0});
+
+  t.equal(poly.vertices[0].x, 0);
+  t.equal(poly.vertices[0].x, 0);
+
+  t.equal(Math.round(1000*poly.vertices[1].x)/1000, 2);
+  t.equal(Math.round(1000*poly.vertices[1].y)/1000, 0);
+
+  t.equal(Math.round(1000*poly.vertices[2].x)/1000, 1);
+  t.equal(Math.round(1000*poly.vertices[2].y)/1000, 1.732);
 });
 
 test('centroid triangle', function(t){
