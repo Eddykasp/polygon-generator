@@ -49,7 +49,7 @@ module.exports = {
       });
     };
     this.rotate = function(angle, point){
-      if(point == 'undefined'){
+      if(typeof point == 'undefined'){
         point = this.centroid();
       }
       for(let i = 0; i < this.vertices.length; i++){
