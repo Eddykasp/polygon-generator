@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/polygon-generator.svg)](https://badge.fury.io/js/polygon-generator)
 # polygon-generator
 ```
 polygon = require('polygon-generator');
