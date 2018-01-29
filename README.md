@@ -1,5 +1,6 @@
 [![npm version](https://badge.fury.io/js/polygon-generator.svg)](https://badge.fury.io/js/polygon-generator)
 [![Run Status](https://api.shippable.com/projects/5a6f3685d953dd0700d5a112/badge?branch=master)](https://app.shippable.com/github/Eddykasp/polygon-generator)
+[![Coverage Badge](https://api.shippable.com/projects/5a6f3685d953dd0700d5a112/coverageBadge?branch=master)](https://app.shippable.com/github/Eddykasp/polygon-generator)
 # polygon-generator
 ```
 polygon = require('polygon-generator');
