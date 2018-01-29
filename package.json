@@ -4,7 +4,8 @@
   "description": "A utility to generate coordinates of an equilateral polygon.",
   "main": "polygon.js",
   "scripts": {
-    "test": "tape test/* | tap-junit -o shippable/testresults"
+    "test": "tape test/* | tap-junit -o shippable/testresults",
+    "coverage": "nyc npm test"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,14 @@
   "homepage": "https://github.com/Eddykasp/polygon-generator#readme",
   "devDependencies": {
     "tap-junit": "^1.2.10",
-    "tape": "^4.8.0"
+    "tape": "^4.8.0",
+    "nyc": "^11.4.1"
+  },
+  "dependencies": {},
+  "nyc": {
+    "reporter": [
+      "cobertura"
+    ],
+    "report-dir": "./shippable/codecoverage"
   }
 }
