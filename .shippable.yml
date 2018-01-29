@@ -3,4 +3,5 @@ node_js:
   - 8.2.1
 build:
   ci:
+    - npm install
     - npm test
