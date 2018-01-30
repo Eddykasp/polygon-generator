@@ -50,3 +50,45 @@ test('rotated pentagon', function(t){
   t.equal(Math.round(1000*coords[4].x)/1000, 0);
   t.equal(Math.round(1000*coords[4].y)/1000, 0.588);
 });
+
+test('invalidSidesInput', function(t){
+  t.plan(6);
+  let coords = polygon.coordinates(2, 1, 0);
+
+  t.equal(Math.round(1000*coords[0].x)/1000, 0);
+  t.equal(Math.round(1000*coords[0].y)/1000, 0);
+
+  t.equal(Math.round(1000*coords[1].x)/1000, 1);
+  t.equal(Math.round(1000*coords[1].y)/1000, 0);
+
+  t.equal(Math.round(1000*coords[2].x)/1000, 0.5);
+  t.equal(Math.round(1000*coords[2].y)/1000, 0.866);
+});
+
+test('invalidLengthInput', function(t){
+  t.plan(6);
+  let coords = polygon.coordinates(3, 0, 0);
+
+  t.equal(Math.round(1000*coords[0].x)/1000, 0);
+  t.equal(Math.round(1000*coords[0].y)/1000, 0);
+
+  t.equal(Math.round(1000*coords[1].x)/1000, 1);
+  t.equal(Math.round(1000*coords[1].y)/1000, 0);
+
+  t.equal(Math.round(1000*coords[2].x)/1000, 0.5);
+  t.equal(Math.round(1000*coords[2].y)/1000, 0.866);
+});
+
+test('defaultParams', function(t){
+  t.plan(6);
+  let coords = polygon.coordinates(3);
+
+  t.equal(Math.round(1000*coords[0].x)/1000, 0);
+  t.equal(Math.round(1000*coords[0].y)/1000, 0);
+
+  t.equal(Math.round(1000*coords[1].x)/1000, 1);
+  t.equal(Math.round(1000*coords[1].y)/1000, 0);
+
+  t.equal(Math.round(1000*coords[2].x)/1000, 0.5);
+  t.equal(Math.round(1000*coords[2].y)/1000, 0.866);
+});
