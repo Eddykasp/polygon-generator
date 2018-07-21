@@ -19,7 +19,7 @@
     "shape"
   ],
   "author": "Max Kasperowski",
-  "license": "ISC",
+  "license": "BSD 2-Clause License",
   "bugs": {
     "url": "https://github.com/Eddykasp/polygon-generator/issues"
   },
