@@ -1,11 +1,11 @@
 let test = require('tape');
 let polygon = require('../polygon.js');
 
-test('transform', function(t){
+test('translate', function(t){
 
   t.plan(6);
   let poly = polygon.polygon(polygon.coordinates(3,1,0));
-  poly.transform({x: 1, y: 1});
+  poly.translate({x: 1, y: 1});
   t.equal(poly.vertices[0].x, 1);
   t.equal(poly.vertices[0].y, 1);
 

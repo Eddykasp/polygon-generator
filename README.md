@@ -24,7 +24,7 @@ vertices = polygon.coordinates(sides, sideLength, startingAngle);
 ```
 
 ## polygon wrapper
-The polygon object provides transform, rotation and scaling methods for polygons. To create one simply pass in an array of vectors representing the vertices.
+The polygon object provides translation, rotation and scaling methods for polygons. To create one simply pass in an array of vectors representing the vertices.
 ```
 poly = polygon.polygon([{x: 0, y: 0}, {x: 1, y: 0}, {x: 0.5, y: 0.866}]);
 ```
@@ -32,11 +32,11 @@ You can also directly pass in the results of the coordinates method.
 ```
 poly = polygon.polygon(polygon.coordinates(5,2,20));
 ```
-### transform
+### translate
 ```
-poly.transform(vector);
+poly.translate(vector);
 ```
-Transform shifts a polygon along a vector. The vector needs to be an object with a field `x` and `y`, which should both be numbers.
+Translate shifts a polygon along a vector. The vector needs to be an object with a field `x` and `y`, which should both be numbers.
 
 ### rotate
 ```

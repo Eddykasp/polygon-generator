@@ -43,6 +43,10 @@ module.exports = {
   polygon: function(vertices){
     this.vertices = vertices;
     this.transform = function(vector){
+      process.emitWarning('The method \'transform\' is deprecated and will be removed in a future version, use \'translate\' instead.', 'DeprecationWarning');
+      this.translate(vector);
+    };
+    this.translate = function(vector){
       this.vertices.forEach(function(vertix){
         vertix.x += vector.x;
         vertix.y += vector.y;
