@@ -1,7 +1,7 @@
-let test = require('tape');
-let polygon = require('../polygon.js');
+let test = require("tape");
+let polygon = require("../polygon.js");
 
-test('translate', function(t){
+test("translate", function(t){
 
   t.plan(6);
   let poly = polygon.polygon(polygon.coordinates(3,1,0));
@@ -16,7 +16,7 @@ test('translate', function(t){
   t.equal(Math.round(1000*poly.vertices[2].y)/1000, 1.866);
 });
 
-test('rotation around centre', function(t){
+test("rotation around centre", function(t){
   t.plan(6);
   let poly = polygon.polygon(polygon.coordinates(3));
   poly.rotate(60);
@@ -31,7 +31,7 @@ test('rotation around centre', function(t){
   t.equal(Math.round(1000*poly.vertices[2].y)/1000, 0.577);
 });
 
-test('rotation around given point', function(t){
+test("rotation around given point", function(t){
   t.plan(6);
   let poly = polygon.polygon(polygon.coordinates(3));
   poly.rotate(60, {x: 0, y: 0});
@@ -46,7 +46,7 @@ test('rotation around given point', function(t){
   t.equal(Math.round(1000*poly.vertices[2].y)/1000, 0.866);
 });
 
-test('scaling from centre', function(t){
+test("scaling from centre", function(t){
   t.plan(6);
   let poly = polygon.polygon(polygon.coordinates(3));
   poly.scale(2);
@@ -61,7 +61,7 @@ test('scaling from centre', function(t){
   t.equal(Math.round(1000*poly.vertices[2].y)/1000, 1.443);
 });
 
-test('scaling from given point', function(t){
+test("scaling from given point", function(t){
   t.plan(6);
   let poly = polygon.polygon(polygon.coordinates(3));
   poly.scale(2, {x: 0, y: 0});
@@ -76,7 +76,7 @@ test('scaling from given point', function(t){
   t.equal(Math.round(1000*poly.vertices[2].y)/1000, 1.732);
 });
 
-test('centroid triangle', function(t){
+test("centroid triangle", function(t){
   t.plan(2);
   let poly = polygon.polygon(polygon.coordinates(3));
   let centroid = poly.centroid();
@@ -84,7 +84,7 @@ test('centroid triangle', function(t){
   t.equal(Math.round(1000*centroid.y)/1000, 0.289);
 });
 
-test('area triangle', function(t){
+test("area triangle", function(t){
   t.plan(1);
   let poly = polygon.polygon(polygon.coordinates(3));
   let area = poly.area();

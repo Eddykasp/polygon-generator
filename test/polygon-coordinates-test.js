@@ -1,8 +1,8 @@
-let test = require('tape');
-let polygon = require('../polygon.js');
+let test = require("tape");
+let polygon = require("../polygon.js");
 
 // test triangle with side length one
-test('triangle test', function(t){
+test("triangle test", function(t){
   t.plan(6);
 
   let coords = polygon.coordinates(3, 1, 0);
@@ -16,7 +16,7 @@ test('triangle test', function(t){
   t.equal(Math.round(1000*coords[2].y)/1000, 0.866);
 });
 
-test('downward rotated triangle', function(t){
+test("downward rotated triangle", function(t){
   t.plan(6);
 
   let coords = polygon.coordinates(3, 1, -60);
@@ -30,7 +30,7 @@ test('downward rotated triangle', function(t){
   t.equal(Math.round(1000*coords[2].y)/1000, 0.866);
 });
 
-test('rotated pentagon', function(t){
+test("rotated pentagon", function(t){
   t.plan(10);
 
   let coords = polygon.coordinates(5, 1, 36);
@@ -51,7 +51,7 @@ test('rotated pentagon', function(t){
   t.equal(Math.round(1000*coords[4].y)/1000, 0.588);
 });
 
-test('invalidSidesInput', function(t){
+test("invalidSidesInput", function(t){
   t.plan(6);
   let coords = polygon.coordinates(2, 1, 0);
 
@@ -65,7 +65,7 @@ test('invalidSidesInput', function(t){
   t.equal(Math.round(1000*coords[2].y)/1000, 0.866);
 });
 
-test('invalidLengthInput', function(t){
+test("invalidLengthInput", function(t){
   t.plan(6);
   let coords = polygon.coordinates(3, 0, 0);
 
@@ -79,7 +79,7 @@ test('invalidLengthInput', function(t){
   t.equal(Math.round(1000*coords[2].y)/1000, 0.866);
 });
 
-test('defaultParams', function(t){
+test("defaultParams", function(t){
   t.plan(6);
   let coords = polygon.coordinates(3);
 

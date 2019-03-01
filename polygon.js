@@ -43,7 +43,7 @@ module.exports = {
   polygon: function(vertices){
     this.vertices = vertices;
     this.transform = function(vector){
-      process.emitWarning('The method \'transform\' is deprecated and will be removed in a future version, use \'translate\' instead.', 'DeprecationWarning');
+      process.emitWarning("The method \'transform\' is deprecated and will be removed in a future version, use \'translate\' instead.", "DeprecationWarning");
       this.translate(vector);
     };
     this.translate = function(vector){
@@ -53,7 +53,7 @@ module.exports = {
       });
     };
     this.rotate = function(angle, point){
-      if(typeof point == 'undefined'){
+      if(typeof point == "undefined"){
         point = this.centroid();
       }
       for(let i = 0; i < this.vertices.length; i++){
@@ -67,7 +67,7 @@ module.exports = {
       }
     };
     this.scale = function(factor, point){
-      if(typeof point == 'undefined'){
+      if(typeof point == "undefined"){
         point = this.centroid();
       }
       for(let i = 0; i < this.vertices.length; i++){
