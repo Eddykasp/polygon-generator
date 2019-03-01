@@ -1,5 +1,5 @@
 module.exports = {
-  coordinates: function(sides, sideLength = 1, startingAngle = 0){
+  coordinates (sides, sideLength = 1, startingAngle = 0){
     if(sides < 3){
       sides = 3;
     }
@@ -40,7 +40,7 @@ module.exports = {
 
     return vertices;
   },
-  polygon: function(vertices){
+  polygon (vertices){
     this.vertices = vertices;
     this.transform = function(vector){
       process.emitWarning("The method \'transform\' is deprecated and will be removed in a future version, use \'translate\' instead.", "DeprecationWarning");
