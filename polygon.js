@@ -8,14 +8,26 @@ function rotate(vector, angle) {
   return {x: newX, y: newY};
 }
 
+function sidesCheck(sides) {
+  if (sides < 3) {
+    return 3;
+  } else {
+    return sides;
+  }
+}
+
+function sideLengthCheck(sideLength) {
+  if (sideLength <= 0) {
+    return 1;
+  } else {
+    return sideLength;
+  }
+}
+
 module.exports = {
   coordinates (sides, sideLength = 1, startingAngle = 0){
-    if(sides < 3){
-      sides = 3;
-    }
-    if(sideLength <= 0){
-      sideLength = 1;
-    }
+    sides = sidesCheck(sides);
+    sideLength = sideLengthCheck(sideLength);
     let vector = {x: sideLength, y: 0.0};
     vector = rotate(vector, startingAngle);
     let vertices = [];
