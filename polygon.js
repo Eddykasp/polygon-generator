@@ -1,3 +1,13 @@
+function toRadians(angle) {
+  return angle * (Math.PI / 180);
+}
+
+function rotate(vector, angle) {
+  let newX = vector.x*Math.cos(toRadians(angle)) - vector.y*Math.sin(toRadians(angle));
+  let newY = vector.x*Math.sin(toRadians(angle)) + vector.y*Math.cos(toRadians(angle));
+  return {x: newX, y: newY};
+}
+
 module.exports = {
   coordinates (sides, sideLength = 1, startingAngle = 0){
     if(sides < 3){
@@ -109,13 +119,3 @@ module.exports = {
     return this;
   }
 };
-
-function toRadians(angle) {
-  return angle * (Math.PI / 180);
-}
-
-function rotate(vector, angle) {
-  let newX = vector.x*Math.cos(toRadians(angle)) - vector.y*Math.sin(toRadians(angle));
-  let newY = vector.x*Math.sin(toRadians(angle)) + vector.y*Math.cos(toRadians(angle));
-  return {x: newX, y: newY};
-}
