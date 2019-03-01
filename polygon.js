@@ -1,11 +1,33 @@
+function toRadians(angle) {
+  return angle * (Math.PI / 180);
+}
+
+function rotate(vector, angle) {
+  let newX = vector.x*Math.cos(toRadians(angle)) - vector.y*Math.sin(toRadians(angle));
+  let newY = vector.x*Math.sin(toRadians(angle)) + vector.y*Math.cos(toRadians(angle));
+  return {x: newX, y: newY};
+}
+
+function sidesCheck(sides) {
+  if (sides < 3) {
+    return 3;
+  } else {
+    return sides;
+  }
+}
+
+function sideLengthCheck(sideLength) {
+  if (sideLength <= 0) {
+    return 1;
+  } else {
+    return sideLength;
+  }
+}
+
 module.exports = {
-  coordinates: function(sides, sideLength = 1, startingAngle = 0){
-    if(sides < 3){
-      sides = 3;
-    }
-    if(sideLength <= 0){
-      sideLength = 1;
-    }
+  coordinates (sides, sideLength = 1, startingAngle = 0){
+    sides = sidesCheck(sides);
+    sideLength = sideLengthCheck(sideLength);
     let vector = {x: sideLength, y: 0.0};
     vector = rotate(vector, startingAngle);
     let vertices = [];
@@ -40,10 +62,10 @@ module.exports = {
 
     return vertices;
   },
-  polygon: function(vertices){
+  polygon (vertices){
     this.vertices = vertices;
     this.transform = function(vector){
-      process.emitWarning('The method \'transform\' is deprecated and will be removed in a future version, use \'translate\' instead.', 'DeprecationWarning');
+      process.emitWarning("The method \'transform\' is deprecated and will be removed in a future version, use \'translate\' instead.", "DeprecationWarning");
       this.translate(vector);
     };
     this.translate = function(vector){
@@ -53,7 +75,7 @@ module.exports = {
       });
     };
     this.rotate = function(angle, point){
-      if(typeof point == 'undefined'){
+      if(typeof point == "undefined"){
         point = this.centroid();
       }
       for(let i = 0; i < this.vertices.length; i++){
@@ -67,7 +89,7 @@ module.exports = {
       }
     };
     this.scale = function(factor, point){
-      if(typeof point == 'undefined'){
+      if(typeof point == "undefined"){
         point = this.centroid();
       }
       for(let i = 0; i < this.vertices.length; i++){
@@ -109,13 +131,3 @@ module.exports = {
     return this;
   }
 };
-
-function toRadians(angle) {
-  return angle * (Math.PI / 180);
-}
-
-function rotate(vector, angle) {
-  let newX = vector.x*Math.cos(toRadians(angle)) - vector.y*Math.sin(toRadians(angle));
-  let newY = vector.x*Math.sin(toRadians(angle)) + vector.y*Math.cos(toRadians(angle));
-  return {x: newX, y: newY};
-}
