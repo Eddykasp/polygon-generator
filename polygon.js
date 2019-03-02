@@ -24,6 +24,14 @@ function sideLengthCheck(sideLength) {
   }
 }
 
+function pointCheck(polygon, point) {
+  if (typeof point == "undefined") {
+    return polygon.centroid();
+  } else {
+    return point;
+  }
+}
+
 module.exports = {
   coordinates (sides, sideLength = 1, startingAngle = 0){
     sides = sidesCheck(sides);
@@ -75,9 +83,7 @@ module.exports = {
       });
     };
     this.rotate = function(angle, point){
-      if(typeof point == "undefined"){
-        point = this.centroid();
-      }
+      point = pointCheck(this, point);
       for(let i = 0; i < this.vertices.length; i++){
         let deltaVector = {
           x: this.vertices[i].x - point.x,
@@ -89,9 +95,7 @@ module.exports = {
       }
     };
     this.scale = function(factor, point){
-      if(typeof point == "undefined"){
-        point = this.centroid();
-      }
+      point = pointCheck(this, point);
       for(let i = 0; i < this.vertices.length; i++){
         let scaleVector = {
           x: this.vertices[i].x - point.x,
