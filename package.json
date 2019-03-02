@@ -5,7 +5,8 @@
   "main": "polygon.js",
   "scripts": {
     "test": "tape test/* | tap-junit -o shippable/testresults",
-    "coverage": "nyc npm test"
+    "coverage": "nyc npm test",
+    "logtest": "tape test/*"
   },
   "repository": {
     "type": "git",
