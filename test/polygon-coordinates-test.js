@@ -92,3 +92,17 @@ test("defaultParams", function(t){
   t.equal(Math.round(1000*coords[2].x)/1000, 0.5);
   t.equal(Math.round(1000*coords[2].y)/1000, 0.866);
 });
+
+test("defaultAngle", function(t){
+  t.plan(6);
+  let coords = polygon.coordinates(3, 1);
+
+  t.equal(Math.round(1000*coords[0].x)/1000, 0);
+  t.equal(Math.round(1000*coords[0].y)/1000, 0);
+
+  t.equal(Math.round(1000*coords[1].x)/1000, 1);
+  t.equal(Math.round(1000*coords[1].y)/1000, 0);
+
+  t.equal(Math.round(1000*coords[2].x)/1000, 0.5);
+  t.equal(Math.round(1000*coords[2].y)/1000, 0.866);
+});
