@@ -1,3 +1,5 @@
+var Util = require('./util')
+
 function toRadians(angle) {
   return angle * (Math.PI / 180);
 }
@@ -33,6 +35,7 @@ function pointCheck(polygon, point) {
 }
 
 module.exports = {
+  util: Util,
   coordinates (sides, sideLength = 1, startingAngle = 0){
     sides = sidesCheck(sides);
     sideLength = sideLengthCheck(sideLength);
