@@ -27,7 +27,7 @@
   "homepage": "https://github.com/Eddykasp/polygon-generator#readme",
   "devDependencies": {
     "nyc": "^14.1.1",
-    "tap-junit": "^1.2.10",
+    "tap-junit": "^3.1.2",
     "tape": "^4.8.0"
   },
   "dependencies": {},
