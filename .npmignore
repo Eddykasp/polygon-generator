@@ -1,2 +1,5 @@
 test/
 shippable/
+.github/
+.nyc_output/
+node_modules/
