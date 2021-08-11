@@ -1,7 +1,6 @@
 [![npm version](https://badge.fury.io/js/polygon-generator.svg)](https://badge.fury.io/js/polygon-generator)
 [![Run Status](https://api.shippable.com/projects/5a6f3685d953dd0700d5a112/badge?branch=master)](https://app.shippable.com/github/Eddykasp/polygon-generator)
 [![Coverage Badge](https://api.shippable.com/projects/5a6f3685d953dd0700d5a112/coverageBadge?branch=master)](https://app.shippable.com/github/Eddykasp/polygon-generator)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/56c7b12b0d284d619c5195419866d783)](https://www.codacy.com/app/Eddykasp/polygon-generator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Eddykasp/polygon-generator&amp;utm_campaign=Badge_Grade)
 # polygon-generator
 
 ## API
